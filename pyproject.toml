@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glauc"
+description = "CLI tool to facilitate AI assisted proofreading."
+version = "0.0.1"
+authors = [
+    {name = "Antonio", email = "antonio@zoftko.com"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+urls = {Source = "https://github.com/antonag32/glauc"}
+dependencies = [
+    "openai~=1.30"
+]
+
+[project.scripts]
+glauc = "glauc.main:main"
+
+[tool.pylint]
+disable = ["missing-module-docstring", "missing-function-docstring"]
+
+[tool.ruff]
+line-length = 119
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "pep621"
+update_changelog_on_bump = true
